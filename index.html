@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<title>Whole Groceries</title>
+</head>
+
+<body>
+	<h1>Whole Groceries</h1>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Please select a food preference, if you have one. This will filter the product choices to suit your needs.</p>
+	<p><b> Diet Preferences:</b></p>
+		<div id="dietSelect" onchange="populateListProductChoices()">
+			<input type="checkbox" name="Vegetarian" value="Vegetarian" id="Vegetarian">
+			<label>Vegetarian</label><br>
+			<input type="checkbox" name="GlutenFree" value="GlutenFree" id="GlutenFree" />
+			<label>GlutenFree</label><br>
+			<input type="checkbox" name="Organic" value="Organic" id="Organic" />
+			<label>Organic</label><br>
+		</div>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Product List</h3>
+  <!-- Control buttons -->
+
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+
+  <p>This is a filtered product list based on your preferences. You may filter through the categories to see specific products. Please select which items you would like to purchase, then add to cart.</p><br>
+	 <b>Product Choices:</b><br><br>
+
+<!-- This was taken from w3schools.
+ --><!-- Tab links -->
+<div class="tab2">
+  <button class="tablinks2" onclick="openFood(event, 'Vegetables')">Vegetables</button>
+  <button class="tablinks2" onclick="openFood(event, 'Grains')">Grains</button>
+  <button class="tablinks2" onclick="openFood(event, 'Fish')">Fish</button>
+   <button class="tablinks2" onclick="openFood(event, 'Dairy')">Dairy</button>
+  <button class="tablinks2" onclick="openFood(event, 'Seasoning')">Seasoning</button>
+</div>
+
+  <div id="displayProduct">
+<!-- Tab content -->
+<div id="Vegetables" class="tabcontent2 test">
+</div>
+
+<div id="Grains" class="tabcontent2 test">
+</div>
+
+<div id="Fish" class="tabcontent2 test">
+</div>
+<div id="Dairy" class="tabcontent2 test">
+</div>
+<div id="Seasoning" class="tabcontent2 test">
+</div>
+</div>
+
+
+<!-- 	 Took this from https://www.w3schools.com/howto/howto_js_filter_elements.asp
+ --><!-- Control buttons -->
+
+
+
+
+
+<br><br>
+
+	 <button class="cartbutton" id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add items to cart
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p><b>Here are the items currently in your cart!</b></p>
+  	<p><b>You selected the following items:</b></p>
+  <div id="displayCart"></div>
+</div>
+
+<footer>
+  <p>Website designed by:
+   <b>Sreenija Koya</b>
+   </p>
+</footer>
+<!-- jquery needed for the filter function
+ -->	<script src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<script src="scripts/groceries.js"></script>
+	<script src="scripts/main.js"></script>
+
+</body>
+</html>
